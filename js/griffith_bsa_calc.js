@@ -32,7 +32,7 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BSA calculation here
-    numBSA = (kg * cm);
+    numBSA = (height * weight);
     denBSA = 3600;
     calcBSA = Math.sqrt((numBSA / denBSA));
     BSA = calcBSA;
