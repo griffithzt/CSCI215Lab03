@@ -19,9 +19,11 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform conversion calculations here
-    var lbs = (lbs - .546) * lbs
-    var inch = (inh - 0.9746) * inch
-    var in =n(in*2.54)*in;
+    kg = weight * .454;
+    meter =  height * 0.0254;
+   	cm = height * 2.54;
+	//weight = kg;
+	//height = cm;
     // -------------------------------
     // Body Surface Area (BSA)
     // -------------------------------
@@ -30,13 +32,10 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BSA calculation here
-    var height = 0;
-    var weight = 0;
-    numerator = (height * weight);
-    denomenator = 3600;
-    fraction = numerator / denomenator;
-    x = Math.sqrt(fraction);
-    BSA = var x;
+    numBSA = (kg * cm);
+    denBSA = 3600;
+    calcBSA = Math.sqrt((numBSA / denBSA));
+    BSA = calcBSA;
     // -------------------------------
     // Ideal Body Weight (IBW)
     // -------------------------------
@@ -47,22 +46,22 @@ function calculate() {
 
         // ==========================================
         // Todo: Perform female IBW calculation here
-    x = 45.5;
-    y = 2.3;
-    z = -60;
-    var height = 0;
-    female = x+y*(height-z)
+    	x = 45.5;
+    	y = 2.3;
+    	z = 60;
+    	female = x + y * (height - z)
+		IBW = female;
 
 
     } else if ( male ) {
 
         // ==========================================
         // Todo: Perform male IBW calculation here
-        a = 50;
-        b = 2.3;
-        c = -60;
-        var height = 0;
-        male = a+b*(height-c)
+        var a = 50;
+        var b = 2.3;
+        var c = 60;
+        male = a + b * (height - c)
+		IBW = male;
     }
 
     // -------------------------------
@@ -73,8 +72,10 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BMI calculation here
-
-
+	numBMI = kg;
+	denomBMI = Math.pow( meter, 2 ) ;
+	calcBMI = numBMI / denomBMI;
+	BMI = calcBMI;
 
     // Do not modify this function call
     display( BSA, IBW, BMI );
